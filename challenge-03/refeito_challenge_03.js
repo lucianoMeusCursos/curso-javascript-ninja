@@ -31,7 +31,9 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 
-pessoa.fazerAniversario = () => pessoa.idade++
+pessoa.fazerAniversario = function () {
+  return pessoa.idade++
+}
 
 
 /*
@@ -45,10 +47,9 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 
-pessoa.andar = (qtdMetroCaminhado) => {
+pessoa.andar = function (qtdMetroCaminhado) {
   pessoa.caminhouQuantosMetros += qtdMetroCaminhado;
   pessoa.andando = true;
-
 };
 
 
@@ -57,7 +58,7 @@ Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o val
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 
-pessoa.parar = () => {
+pessoa.parar = function () {
   pessoa.andando = false
 
 };
@@ -68,7 +69,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 
-pessoa.nomeCompleto = () => {
+pessoa.nomeCompleto = function () {
   let { nome, sobrenome } = pessoa;
 
   return `Olá! Meu nome é ${nome} ${sobrenome}!`;
@@ -83,7 +84,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 
-pessoa.mostrarIdade = () => {
+pessoa.mostrarIdade = function () {
   let { idade } = pessoa;
 
   return `Olá, eu tenho ${idade} anos!`;
@@ -96,7 +97,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 
-pessoa.mostrarPeso = () => {
+pessoa.mostrarPeso = function () {
   let { peso } = pessoa;
 
   return `Eu peso ${peso}Kg`;
@@ -108,7 +109,7 @@ pessoa.mostrarPeso = () => {
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-pessoa.mostrarAltura = () => {
+pessoa.mostrarAltura = function () {
   let { altura } = pessoa;
 
   return `Minha altura é ${altura}m.`;
@@ -219,7 +220,7 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 
-pessoa.apresentacao = () => {
+pessoa.apresentacao = function () {
   let { altura, caminhouQuantosMetros, idade, nome, peso, sobrenome, sexo } = pessoa;
   let fraseGenero = sexo === 'masculino' ? 'o' : 'a';
   let mudaPlural = (valor) => valor > 1 ? 's' : '';
@@ -230,5 +231,4 @@ pessoa.apresentacao = () => {
 
 // Agora, apresente-se ;)
 console.log('Minha apresentação\n', pessoa.apresentacao());
-
 
