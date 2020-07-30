@@ -68,26 +68,19 @@ falada, como se você estivesse falando em código xD
 */
 console.log( '\nSeu nome na língua do "P":' );
 
-function stringToP(list, isInverse) {
-  return isInverse
-    ? list.reduce((acumulado, atual) => {
-        return acumulado + 'p' + atual
-      }, '')
-    : list.reduceRight((acumulado, atual) => {
-        return acumulado + 'p' + atual
-      }, '');
-}
-
 let name = ['lu', 'ci', 'a', 'no'];
 
-console.log(stringToP(name))
+console.log( name.reduce((acumulado, atual) =>  acumulado + 'p' + atual, ''))
 
 /*
 Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
 console.log( '\nInversed Name:' );
-console.log(stringToP(name, true))
+
+let inversedName = name.reduceRight((acumulado, atual ) => acumulado + atual)
+
+console.log(inversedName)
 
 /*
 Mostre no console o array `numberObjects`.
@@ -118,7 +111,7 @@ será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
 */
 console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
 console.log(
-  (numberObjects.lastIndexOf({ number: 2}) > -2)
+  (numberObjects.lastIndexOf({ number: 2}, 2) > -1)
   ? "Existe um objeto { number: 2 } em numberObjects!"
   : "Não existe um objeto { number: 2 } em numberObjects :("
 )
